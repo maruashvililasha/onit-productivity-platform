@@ -86,7 +86,7 @@ export function DashboardScreen() {
                 Custom Range
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto bg-popover p-4 text-popover-foreground">
+            <PopoverContent className="w-auto bg-white p-4 text-popover-foreground">
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="date-from" className="text-popover-foreground">
@@ -132,7 +132,7 @@ export function DashboardScreen() {
             <SelectTrigger className="w-48 bg-background text-foreground">
               <SelectValue placeholder="All Team Members" />
             </SelectTrigger>
-            <SelectContent className="bg-popover text-popover-foreground">
+            <SelectContent className="bg-white text-popover-foreground">
               <SelectItem value="all" className="text-popover-foreground">
                 All Team Members
               </SelectItem>
