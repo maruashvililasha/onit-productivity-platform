@@ -364,7 +364,7 @@ export function ProjectsScreen() {
 
       {/* Project Details Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto bg-popover text-popover-foreground sm:max-w-4xl">
+        <DialogContent className="max-h-[90vh] overflow-y-auto bg-white/100 text-black dark:bg-neutral-900/95 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-xl rounded-lg sm:max-w-4xl backdrop-blur-sm">
           {selectedProject && (
             <>
               <DialogHeader>

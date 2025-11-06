@@ -202,13 +202,44 @@ export function DashboardScreen() {
       </div>
 
       {/* Charts Row */}
+      <DashboardCard title="Hours Logged">
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={weeklyHours}>
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 91%)" />
+            <XAxis dataKey="day" stroke="hsl(240, 3.8%, 46.1%)" />
+            <YAxis stroke="hsl(240, 3.8%, 46.1%)" />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: 'hsl(0, 0%, 100%)',
+                border: '1px solid hsl(220, 13%, 91%)',
+                borderRadius: '8px',
+                color: 'hsl(240, 5.3%, 26.1%)',
+              }}
+            />
+            <Bar dataKey="hours" fill="hsl(217.2, 91.2%, 59.8%)" radius={[8, 8, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </DashboardCard>
+
       <div className="grid gap-6 lg:grid-cols-2">
-        <DashboardCard title="Hours Logged">
+        
+        <DashboardCard title="Work Type Distribution">
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={weeklyHours}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 91%)" />
-              <XAxis dataKey="day" stroke="hsl(240, 3.8%, 46.1%)" />
-              <YAxis stroke="hsl(240, 3.8%, 46.1%)" />
+            <PieChart>
+              <Pie
+                data={workTypeDistribution}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={({ name, hours }) => `${name}: ${hours}h`}
+                outerRadius={100}
+                fill="#8884d8"
+                dataKey="hours"
+              >
+                {workTypeDistribution.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
               <Tooltip
                 contentStyle={{
                   backgroundColor: 'hsl(0, 0%, 100%)',
@@ -217,11 +248,9 @@ export function DashboardScreen() {
                   color: 'hsl(240, 5.3%, 26.1%)',
                 }}
               />
-              <Bar dataKey="hours" fill="hsl(217.2, 91.2%, 59.8%)" radius={[8, 8, 0, 0]} />
-            </BarChart>
+            </PieChart>
           </ResponsiveContainer>
         </DashboardCard>
-
         <DashboardCard title="Hours by Project">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -251,36 +280,6 @@ export function DashboardScreen() {
           </ResponsiveContainer>
         </DashboardCard>
       </div>
-
-      {/* New: Work Type Distribution */}
-      <DashboardCard title="Work Type Distribution">
-        <ResponsiveContainer width="100%" height={300}>
-          <PieChart>
-            <Pie
-              data={workTypeDistribution}
-              cx="50%"
-              cy="50%"
-              labelLine={false}
-              label={({ name, hours }) => `${name}: ${hours}h`}
-              outerRadius={100}
-              fill="#8884d8"
-              dataKey="hours"
-            >
-              {workTypeDistribution.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </Pie>
-            <Tooltip
-              contentStyle={{
-                backgroundColor: 'hsl(0, 0%, 100%)',
-                border: '1px solid hsl(220, 13%, 91%)',
-                borderRadius: '8px',
-                color: 'hsl(240, 5.3%, 26.1%)',
-              }}
-            />
-          </PieChart>
-        </ResponsiveContainer>
-      </DashboardCard>
 
       {/* Team Performance */}
       <DashboardCard title="Team Performance">
