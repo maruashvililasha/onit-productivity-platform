@@ -222,7 +222,6 @@ export function DashboardScreen() {
       </DashboardCard>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        
         <DashboardCard title="Work Type Distribution">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -251,6 +250,7 @@ export function DashboardScreen() {
             </PieChart>
           </ResponsiveContainer>
         </DashboardCard>
+        
         <DashboardCard title="Hours by Project">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
