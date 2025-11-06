@@ -54,7 +54,7 @@ export function DashboardScreen() {
             variant={dateFilter === 'today' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setDateFilter('today')}
-            className={dateFilter === 'today' ? 'bg-tertiary text-tertiary-foreground' : ''}
+            className={dateFilter === 'today' ? 'bg-black text-white' : ''}
           >
             Today
           </Button>
@@ -62,7 +62,7 @@ export function DashboardScreen() {
             variant={dateFilter === 'week' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setDateFilter('week')}
-            className={dateFilter === 'week' ? 'bg-tertiary text-tertiary-foreground' : ''}
+            className={dateFilter === 'week' ? 'bg-black text-white' : ''}
           >
             This Week
           </Button>
@@ -70,7 +70,7 @@ export function DashboardScreen() {
             variant={dateFilter === 'month' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setDateFilter('month')}
-            className={dateFilter === 'month' ? 'bg-tertiary text-tertiary-foreground' : ''}
+            className={dateFilter === 'month' ? 'bg-black text-white' : ''}
           >
             This Month
           </Button>
