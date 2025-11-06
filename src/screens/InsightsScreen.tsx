@@ -85,7 +85,7 @@ export function InsightsScreen() {
             variant={dateFilter === 'today' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setDateFilter('today')}
-            className={dateFilter === 'today' ? 'bg-tertiary text-tertiary-foreground' : ''}
+            className={dateFilter != 'today' ? 'bg-tertiary text-tertiary-foreground' : 'bg-black text-white'}
           >
             Today
           </Button>
@@ -93,7 +93,7 @@ export function InsightsScreen() {
             variant={dateFilter === 'week' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setDateFilter('week')}
-            className={dateFilter === 'week' ? 'bg-tertiary text-tertiary-foreground' : ''}
+            className={dateFilter != 'week' ? 'bg-tertiary text-tertiary-foreground' : 'bg-black text-white'}
           >
             This Week
           </Button>
@@ -101,7 +101,7 @@ export function InsightsScreen() {
             variant={dateFilter === 'month' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setDateFilter('month')}
-            className={dateFilter === 'month' ? 'bg-tertiary text-tertiary-foreground' : ''}
+            className={dateFilter != 'month' ? 'bg-tertiary text-tertiary-foreground' : 'bg-black text-white'}
           >
             This Month
           </Button>
@@ -117,7 +117,9 @@ export function InsightsScreen() {
                 Custom Range
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto bg-popover p-4 text-popover-foreground">
+            <PopoverContent
+  className="w-auto bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 rounded-md shadow-xl p-4 backdrop-blur-sm"
+>
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="date-from" className="text-popover-foreground">
@@ -166,12 +168,18 @@ export function InsightsScreen() {
             <SelectTrigger className="w-48 bg-background text-foreground">
               <SelectValue placeholder="All Projects" />
             </SelectTrigger>
-            <SelectContent className="bg-popover text-popover-foreground">
-              <SelectItem value="all" className="text-popover-foreground">
+            <SelectContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-md">
+              <SelectItem
+                value="all"
+                className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer"
+              >
                 All Projects
               </SelectItem>
-              {allProjects.map((project) => (
-                <SelectItem key={project.id} value={project.id.toString()} className="text-popover-foreground">
+              {allProjects.map((project) => (<SelectItem
+                  key={project.id}
+                  value={project.id.toString()}
+                  className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white"
+                >
                   {project.name}
                 </SelectItem>
               ))}
@@ -185,12 +193,19 @@ export function InsightsScreen() {
             <SelectTrigger className="w-48 bg-background text-foreground">
               <SelectValue placeholder="All Team Members" />
             </SelectTrigger>
-            <SelectContent className="bg-popover text-popover-foreground">
-              <SelectItem value="all" className="text-popover-foreground">
+            <SelectContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-md">
+              <SelectItem
+                value="all"
+                className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer"
+              >
                 All Team Members
               </SelectItem>
               {allMembers.map((member) => (
-                <SelectItem key={member.id} value={member.id.toString()} className="text-popover-foreground">
+                <SelectItem
+                  key={member.id}
+                  value={member.id.toString()}
+                  className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white"
+                >
                   {member.name}
                 </SelectItem>
               ))}

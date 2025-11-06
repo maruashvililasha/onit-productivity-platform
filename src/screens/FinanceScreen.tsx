@@ -164,19 +164,34 @@ export function FinanceScreen() {
 
       <Tabs defaultValue="salaries" className="w-full">
         <TabsList className="grid w-full grid-cols-5 bg-secondary">
-          <TabsTrigger value="salaries" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+          <TabsTrigger
+            value="salaries"
+            className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+          >
             Salaries
           </TabsTrigger>
-          <TabsTrigger value="expenses" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+          <TabsTrigger
+            value="expenses"
+            className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+          >
             Expenses
           </TabsTrigger>
-          <TabsTrigger value="income" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+          <TabsTrigger
+            value="income"
+            className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+          >
             Income
           </TabsTrigger>
-          <TabsTrigger value="invoices" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+          <TabsTrigger
+            value="invoices"
+            className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+          >
             Invoices
           </TabsTrigger>
-          <TabsTrigger value="recurring" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+          <TabsTrigger
+            value="recurring"
+            className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+          >
             Recurring
           </TabsTrigger>
         </TabsList>
@@ -474,10 +489,16 @@ export function FinanceScreen() {
         <TabsContent value="recurring" className="mt-6">
           <Tabs defaultValue="recurring-invoices" className="w-full">
             <TabsList className="grid w-full grid-cols-2 bg-secondary">
-              <TabsTrigger value="recurring-invoices" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+                <TabsTrigger
+                  value="recurring-invoices"
+                  className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+                >
                 Recurring Invoices
               </TabsTrigger>
-              <TabsTrigger value="recurring-expenses" className="text-secondary-foreground data-[state=active]:bg-tertiary data-[state=active]:text-tertiary-foreground">
+                <TabsTrigger
+                  value="recurring-expenses"
+                  className="text-black data-[state=active]:bg-black data-[state=active]:text-white rounded-md transition-colors"
+                >
                 Recurring Expenses
               </TabsTrigger>
             </TabsList>

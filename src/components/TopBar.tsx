@@ -48,7 +48,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
         >
           <MenuIcon className="h-6 w-6" />
         </Button>
-        <h2 className="font-fuji-medium text-xl text-foreground lg:text-2xl">
+        <h2 className="font-fuji-medium font-bold text-3xl text-foreground lg:text-3xl">
           {pageTitle}
         </h2>
       </div>

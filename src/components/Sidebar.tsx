@@ -54,27 +54,27 @@ export function Sidebar({ isOpen, onToggle, onLogout }: SidebarProps) {
 
           <Separator className="bg-border" />
 
-          <nav className="flex-1 space-y-2 overflow-y-auto px-3 py-6">
-            {navigationItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.path;
-              
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`flex items-center gap-4 rounded-md px-3 py-3 text-sm font-pp-machina-plain-regular font-semibold transition-colors ${
-                    isActive
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-foreground hover:bg-secondary'
-                  }`}
-                >
-                  <Icon className="h-5 w-5 flex-shrink-0" />
-                  {isOpen && <span>{item.label}</span>}
-                </Link>
-              );
-            })}
-          </nav>
+        <nav className="flex-1 space-y-2 overflow-y-auto px-3 py-6">
+          {navigationItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = location.pathname === item.path;
+
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex items-center gap-4 rounded-md px-3 py-3 text-sm font-pp-machina-plain-regular font-semibold transition-colors ${
+                  isActive
+                    ? 'bg-black text-white'
+                    : 'text-foreground hover:bg-gray-100'
+                }`}
+              >
+                <Icon className="h-5 w-5 flex-shrink-0" />
+                {isOpen && <span>{item.label}</span>}
+              </Link>
+            );
+          })}
+        </nav>
 
           <Separator className="bg-border" />
 
