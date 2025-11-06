@@ -62,7 +62,7 @@ export function InvoicesScreen() {
               Create Invoice
             </Button>
           </DialogTrigger>
-          <DialogContent className="bg-popover text-popover-foreground sm:max-w-md">
+          <DialogContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-xl rounded-lg sm:max-w-md">
             <DialogHeader>
               <DialogTitle className="text-popover-foreground">Create Invoice</DialogTitle>
               <DialogDescription className="text-muted-foreground">

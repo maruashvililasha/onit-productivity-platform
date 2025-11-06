@@ -251,7 +251,7 @@ export function FinanceScreen() {
                     Add Expense
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="bg-popover text-popover-foreground sm:max-w-md">
+                <DialogContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-xl rounded-lg sm:max-w-md">
                   <DialogHeader>
                     <DialogTitle className="text-popover-foreground">Add New Expense</DialogTitle>
                     <DialogDescription className="text-muted-foreground">
@@ -360,7 +360,7 @@ export function FinanceScreen() {
                     Create Invoice
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="bg-popover text-popover-foreground sm:max-w-md">
+                <DialogContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-xl rounded-lg sm:max-w-md">
                   <DialogHeader>
                     <DialogTitle className="text-popover-foreground">Create New Invoice</DialogTitle>
                     <DialogDescription className="text-muted-foreground">
@@ -513,7 +513,7 @@ export function FinanceScreen() {
                         Add Recurring Invoice
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="bg-popover text-popover-foreground sm:max-w-md">
+                    <DialogContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-xl rounded-lg sm:max-w-md">
                       <DialogHeader>
                         <DialogTitle className="text-popover-foreground">Add Recurring Invoice</DialogTitle>
                         <DialogDescription className="text-muted-foreground">
@@ -629,7 +629,7 @@ export function FinanceScreen() {
                         Add Recurring Expense
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="bg-popover text-popover-foreground sm:max-w-md">
+                    <DialogContent className="bg-white text-black dark:bg-neutral-900 dark:text-white border border-gray-200 dark:border-neutral-800 shadow-xl rounded-lg sm:max-w-md">
                       <DialogHeader>
                         <DialogTitle className="text-popover-foreground">Add Recurring Expense</DialogTitle>
                         <DialogDescription className="text-muted-foreground">
