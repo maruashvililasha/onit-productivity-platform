@@ -61,7 +61,7 @@ export function SettingsScreen() {
               <SelectTrigger className="bg-background text-foreground">
                 <SelectValue placeholder="Select currency" />
               </SelectTrigger>
-              <SelectContent className="bg-popover text-popover-foreground">
+              <SelectContent className="bg-white text-popover-foreground">
                 <SelectItem value="USD" className="text-popover-foreground">
                   USD ($)
                 </SelectItem>
@@ -82,7 +82,7 @@ export function SettingsScreen() {
               <SelectTrigger className="bg-background text-foreground">
                 <SelectValue placeholder="Select time format" />
               </SelectTrigger>
-              <SelectContent className="bg-popover text-popover-foreground">
+              <SelectContent className="bg-white text-popover-foreground">
                 <SelectItem value="24h" className="text-popover-foreground">
                   24-hour (e.g., 14:00)
                 </SelectItem>
