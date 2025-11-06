@@ -1,0 +1,161 @@
+/* Font Imports */
+@font-face {
+  font-family: 'Fuji Bold';
+  src: url('https://assets.animaapp.com/fonts/fuji-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fuji Medium';
+  src: url('https://assets.animaapp.com/fonts/fuji-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain Regular';
+  src: url('https://assets.animaapp.com/fonts/pp-neue-machina-plain-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Inktrap Light Italic';
+  src: url('https://assets.animaapp.com/fonts/pp-neue-machina-inktrap-light-italic.otf') format('opentype');
+  font-weight: 300; /* Assuming Light is 300 */
+  font-style: italic;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Provided Color Palette */
+    --color-black-primary: 0 0% 0%; /* #000000 */
+    --color-black-secondary: 240 1.9% 13.1%; /* #211F20 */
+    --color-blue-accent: 225 100% 51.2%; /* #0736FE */
+    --color-off-white: 50 100% 95.7%; /* #F3F3F1 */
+
+    /* Mapped to Shadcn/Tailwind defaults */
+    --color-background: var(--color-off-white);
+    --color-foreground: var(--color-black-secondary); /* Dark gray for general text */
+
+    --color-primary: var(--color-black-primary); /* Black for primary actions/selection */
+    --color-primary-foreground: 0 0% 100%; /* White text on black */
+
+    --color-secondary: var(--color-off-white); /* Off-white for secondary backgrounds */
+    --color-secondary-foreground: var(--color-black-secondary); /* Dark gray text on secondary */
+
+    --color-tertiary: var(--color-blue-accent); /* Accent blue for highlights */
+    --color-tertiary-foreground: 0 0% 100%; /* White text on accent blue */
+
+    --color-muted: var(--color-off-white);
+    --color-muted-foreground: 240 3.8% 40%; /* Slightly lighter dark gray for muted text */
+
+    --color-accent: var(--color-off-white);
+    --color-accent-foreground: var(--color-black-secondary);
+
+    --color-popover: var(--color-off-white);
+    --color-popover-foreground: var(--color-black-secondary);
+
+    --color-card: 0 0% 100%; /* Pure white for cards */
+    --color-card-foreground: var(--color-black-secondary);
+
+    --color-border: var(--color-black-secondary); /* Dark gray for borders */
+    --color-input: var(--color-off-white);
+    --color-ring: var(--color-blue-accent); /* Accent blue for ring */
+
+    /* Semantic colors (keep as is or adjust if new palette has direct equivalents) */
+    --color-success: 142 71% 45%;
+    --color-warning: 38 92% 50%;
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 100%;
+
+    /* Font Families */
+    --font-h1: 'Fuji Bold', sans-serif;
+    --font-h2: 'Fuji Medium', sans-serif;
+    --font-body: 'PP Neue Machina Plain Regular', sans-serif;
+    --font-caption: 'PP Neue Machina Inktrap Light Italic', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Corner Radius */
+    --corner-radius: 8px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body); /* Default body font */
+    background-image: none;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  /* Apply font styles based on type level */
+  h1 {
+    font-family: var(--font-h1);
+    font-size: 48px; /* Default H1 size, can be overridden by utility classes */
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: var(--font-h2);
+    font-size: 32px; /* Default H2 size */
+    font-weight: 500;
+  }
+
+  p {
+    font-family: var(--font-body);
+    font-size: 16px; /* Default body size */
+    font-weight: 400;
+  }
+
+  .caption { /* Custom class for caption style */
+    font-family: var(--font-caption);
+    font-size: 12px; /* Default caption size */
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Custom font utility classes */
+  .font-fuji-bold { font-family: var(--font-h1); }
+  .font-fuji-medium { font-family: var(--font-h2); }
+  .font-pp-machina-plain-regular { font-family: var(--font-body); }
+  .font-pp-machina-inktrap-light-italic { font-family: var(--font-caption); }
+}
